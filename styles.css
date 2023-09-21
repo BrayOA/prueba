@@ -1,192 +1,128 @@
-body,html {
+body {
+    font-family: 'Arial', sans-serif;
     display: flex;
-    justify-content:space-around;
-    align-items:center;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     height: 100vh;
-    background-color: #000000;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    color: aliceblue;
-    height: 100vh;
-}
-
-.title {
-    color: aliceblue;
-    min-height: 50px;
-}
-
-.title h1 {
-    transition: opacity 0.5s ease;
-}
-
-.title h1.fade-out {
-    opacity: 0;
-}
-
-.flor {
-    position: relative;
-    width: 200px;
-    height: 200px;
-    opacity: 0.1;
-    transition: opacity 4s ease;
-}
-
-.flor:hover {
-    opacity: 1;
-}
-
-.petalo {
-    position: absolute;
-    width: 100px;
-    height: 50px;
-    background-color: rgb(255, 251, 0);
-    border-radius: 50%;
-    top: 50%;
-    left: 50%;
-    transform-origin: center;
-}
-
-.petalo:nth-child(1) {
-    transform: translate(-50%, -50%) rotate(0deg);
-}
-
-.petalo:nth-child(2) {
-    transform: translate(-50%, -50%) rotate(72deg);
-}
-
-.petalo:nth-child(3) {
-    transform: translate(-50%, -50%) rotate(144deg);
-}
-
-.petalo:nth-child(4) {
-    transform: translate(-50%, -50%) rotate(216deg);
-}
-
-.petalo:nth-child(5) {
-    transform: translate(-50%, -50%) rotate(288deg);
-}
-
-.centro {
-    position: absolute;
-    width: 50px;
-    height: 50px;
-    background-color: rgb(138, 83, 10);
-    border-radius: 50%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-.tallo {
-    position: absolute;
-    width: 10px;
-    height: 150px;
-    background-color: rgb(5, 43, 5);
-    left: 50%;
-    bottom: -96px;  /* Valor ajustado */
-    transform: translateX(-50%);
-}
-.rama {
-    position: absolute;
-    width: 80px;
-    height: 10px;
-    background-color: rgb(5, 88, 5);
-    bottom: -14px;
-    transform-origin: center;
-}
-
-.rama-izquierda {
-    left: 50%;
-    transform: translateX(-50%) rotate(-45deg);
-}
-
-.rama-derecha {
-    left: 50%;
-    transform: translateX(-50%) rotate(45deg);
-}
-
-@keyframes explosion {
-    0% {
-        transform: scale(0);
-        opacity: 1;
-    }
-    100% {
-        transform: scale(4);
-        opacity: 0;
-    }
-}
-
-.cuete {
-    position: absolute;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background: rgba(255, 165, 0, 0.7); /* Color naranja semi-transparente, pero puedes cambiar a tu gusto */
-    animation: explosion 1s forwards;
-}
-
-/* Posiciones individuales para cada cuete para que aparezcan en diferentes lugares */
-#cuete1 {
-    top: 20%;
-    left: 25%;
-}
-
-#cuete2 {
-    top: 15%;
-    left: 75%;
-}
-
-#cuete3 {
-    top: 50%;
-    left: 85%;
-}
-
-.teAmo {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) scale(0);
-    font-size: 2em;
-    font-weight: bold;
-    color: #ff0000;
-    opacity: 0;
-    transition: transform 0.5s ease, opacity 0.5s ease;
-}
-
-@keyframes boom {
-    0% {
-        transform: translate(-50%, -50%) scale(0);
-        opacity: 0;
-    }
-    60% {
-        transform: translate(-50%, -50%) scale(1.2);
-        opacity: 1;
-    }
-    100% {
-        transform: translate(-50%, -50%) scale(1);
-        opacity: 1;
-    }
-}
-
-/* Para pantallas con un ancho máximo de 768px (típicamente tablets y móviles) */
-@media only screen and (max-width: 768px) {
-
-    body, html {
-        flex-direction: column; /* Apila los elementos verticalmente */
-        padding: 20px; /* Espacio alrededor para evitar que el contenido toque los bordes */
-    }
-
-    .flor {
-        width: 150px; /* Tamaño reducido para la flor */
-        height: 150px;
-        margin: 20px 0; /* Espacio entre las flores cuando están apiladas */
-    }
     
-    .title {
-        font-size: 16px; /* Tamaño de fuente más pequeño para el título */
-        margin-bottom: 20px; /* Espacio debajo del título */
-    }
+    background-color: rgb(0, 0, 0);
+    color: yellow;
+}
 
-    /* Puedes agregar más ajustes según tus necesidades aquí */
+#phrase-container {
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+#displayed-image {
+    width: 600px; 
+    height: 400px; 
+    display: block;
+    margin: 0 auto;
+    object-fit: cover;
+}
+
+.loader-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgb(0, 0, 0); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; 
+}
+.loader {
+    width: 64px;
+    height: 44px;
+    position: relative;
+    border: 5px solid #fff;
+    border-radius: 8px;
+  }
+  .loader::before {
+    content: '';
+    position: absolute;
+    border: 5px solid #fff;
+    width: 32px;
+    height: 28px;
+    border-radius: 50% 50% 0 0;
+    left: 50%;
+    top: 0;
+    transform: translate(-50% , -100%)
+  
+  }
+  .loader::after {
+    content: '';
+    position: absolute;
+    transform: translate(-50% , -50%);
+    left: 50%;
+    top: 50%;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #fff;
+    box-shadow: 16px 0 #fff, -16px 0 #fff;
+    animation: flash 0.5s ease-out infinite alternate;
+  }
+  
+  @keyframes flash {
+    0% {
+      background-color: rgba(255, 255, 255, 0.25);
+      box-shadow: 16px 0 rgba(255, 255, 255, 0.25), -16px 0 rgba(255, 255, 255, 1);
+    }
+    50% {
+      background-color: rgba(255, 255, 255, 1);
+      box-shadow: 16px 0 rgba(255, 255, 255, 0.25), -16px 0 rgba(255, 255, 255, 0.25);
+    }
+    100% {
+      background-color: rgba(255, 255, 255, 0.25);
+      box-shadow: 16px 0 rgba(255, 255, 255, 1), -16px 0 rgba(255, 255, 255, 0.25);
+    }
+  }
+ 
+  #password-prompt {
+    width: 300px;
+    margin: 50px auto;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(187, 255, 0, 0.2);
+    background-color: #000000;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+#password-prompt:hover {
+    transform: scale(1.05);
+}
+
+#password-prompt input[type="password"] {
+    width: 80%;
+    padding: 10px;
+    margin-top: 10px;
+    border: 1px solid #000000;
+    border-radius: 3px;
+}
+
+#password-prompt button {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 3px;
+    background-color: #fffb00;
+    color: #000000;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#password-prompt button:hover {
+    background-color: #d0ff00;
+}
+
+#error-message {
+    margin-top: 10px;
 }

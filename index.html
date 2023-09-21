@@ -1,56 +1,28 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flor Amarilla</title>
+    <title>Frases e Imágenes</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
-    <div class="title">
-        <h1 id="greeting">"Feliz 21 de setiembre mi Amorsito"</h1>
+    <div class="loader-container">
+        <span class="loader"></span>
     </div>
 
-    <div class="flor">
-        <div class="petalo"></div>
-        <div class="petalo"></div>
-        <div class="petalo"></div>
-        <div class="petalo"></div>
-        <div class="petalo"></div>
-        <div class="centro"></div>
-        <div class="tallo"></div>
-        <div class="rama rama-izquierda"></div>
-        <div class="rama rama-derecha"></div>
-        <div class="cuete" id="cuete1"></div>
-<div class="cuete" id="cuete2"></div>
-<div class="cuete" id="cuete3"></div>
-
+    <div id="password-prompt" style="display: none;">
+        <input type="password" id="password-input" placeholder="Ingresa la contraseña">
+        <button onclick="checkPassword()">Ingresa ami corazon bb ❤️</button>
+        <div id="error-message" style="color: red; display: none;">Error al amarme pipipi 💔</div>
     </div>
-    <div class="flor">
-        <div class="petalo"></div>
-        <div class="petalo"></div>
-        <div class="petalo"></div>
-        <div class="petalo"></div>
-        <div class="petalo"></div>
-        <div class="centro"></div>
-        <div class="tallo"></div>
-        <div class="rama rama-izquierda"></div>
-        <div class="rama rama-derecha"></div>
-
-    </div>
-    <div class="flor">
-        <div class="petalo"></div>
-        <div class="petalo"></div>
-        <div class="petalo"></div>
-        <div class="petalo"></div>
-        <div class="petalo"></div>
-        <div class="centro"></div>
-        <div class="tallo"></div>
-        <div class="rama rama-izquierda"></div>
-        <div class="rama rama-derecha"></div>
+    
+    <div id="content" style="display: none;">
+        <div id="phrase-container">Loading...</div>
+        <div id="image-container">
+            <img id="displayed-image" src="" alt="Imagen dinámica">
+        </div>
     </div>
     <script src="scripts.js"></script>
 </body>
 </html>
-

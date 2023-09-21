@@ -1,17 +1,17 @@
 const phrases = [
-    "feliz 21 de  septiembre amor",
-    "Llegó la primavera y tu sonrisa alumbra más que un sol radiante",
-    "teamo mucho mi bb hermosa",
-    "Por más primaveras juntos disfrutando de nuestro amor",
-    "Te entrego estas flores amarillas como símbolo de mi amor."
+    "feliz 21 de  septiembre amor ❤️",
+    "Te entrego estas flores amarillas como símbolo de mi amor ❤️",
+    "Por más primaveras juntos disfrutando de nuestro amor ❤️",
+    "En cada pétalo de esta flor amarilla, hay un pedacito de mi amor por ti 😍",
+    "El amarillo de estas flores es el color de la felicidad que siento a tu lado 👩‍❤️‍💋‍👨"
 ];
 
 const images = [
-    'https://img.asmedia.epimg.net/resizer/lc1JIpe8HVd0mYqlJMtTrexdKK8=/644x362/cloudfront-eu-central-1.images.arcpublishing.com/diarioas/33T3W4YVIZDDXC6XBGJT7MFWD4.jpg',
-    'https://www.sorprendelima.pe/cdn/shop/articles/MAY3373_1445x.jpg?v=1664254563',
+    'https://w0.peakpx.com/wallpaper/295/544/HD-wallpaper-for-you-cute-flower-yellow-valentine-funny-cat-tulip-pisica.jpg',
+    'https://i.pinimg.com/736x/7c/6a/64/7c6a6478e9ca3486b9cafae42f47008f.jpg',
     'https://www.nacion.com/resizer/MxSAnf02I9pCd7co-gXLzP6GzAw=/1440x0/filters:format(jpg):quality(70)/cloudfront-us-east-1.images.arcpublishing.com/gruponacion/5RD77QIUIRAJNHNLGURAOEYIMQ.jpg',
     'https://depor.com/resizer/AyrfhlitYsGi8jDgCj5NL8MpyDk=/580x330/smart/filters:format(jpeg):quality(75)/cloudfront-us-east-1.images.arcpublishing.com/elcomercio/BJ5FB4I5WJEWLGZLI7SZJRDMBU.jpg',
-    'https://www.elheraldodechiapas.com.mx/doble-via/r6mjh8-flores-amarillas.jpeg/ALTERNATES/LANDSCAPE_1140/flores%20amarillas.jpeg'
+    'https://i.pinimg.com/originals/e8/e0/92/e8e092b2dd3f8e1afd68672c3f728702.gif'
 ];
 
 const correctPassword = "140921"; // Cambia "miContraseña" por la contraseña que desees.
@@ -73,8 +73,8 @@ document.addEventListener('mousemove', function(e) {
     let icon = img[Math.floor(Math.random() * img.length)];
     emoji.innerText = icon;
 
-    let size = Math.random() * 50;
-    emoji.style.fontSize = (5 + size) + 'px';
+    let size = Math.random() * 40;
+    emoji.style.fontSize = (7 + size) + 'px';
 
     body.appendChild(emoji);
 

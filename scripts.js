@@ -1,8 +1,8 @@
 const phrases = [
-    "feliz 21 fe setiembre amor",
-    "teamo mucho mi bb hermosa",
+    "feliz 21 de  septiembre amor",
     "Llegó la primavera y tu sonrisa alumbra más que un sol radiante",
-    "Por más primaveras juntos disfrutando de nuestro amor y compañía",
+    "teamo mucho mi bb hermosa",
+    "Por más primaveras juntos disfrutando de nuestro amor",
     "Te entrego estas flores amarillas como símbolo de mi amor."
 ];
 
@@ -14,7 +14,7 @@ const images = [
     'https://www.elheraldodechiapas.com.mx/doble-via/r6mjh8-flores-amarillas.jpeg/ALTERNATES/LANDSCAPE_1140/flores%20amarillas.jpeg'
 ];
 
-const correctPassword = "BRITDBRAY14"; // Cambia "miContraseña" por la contraseña que desees.
+const correctPassword = "140921"; // Cambia "miContraseña" por la contraseña que desees.
 
 let currentPhraseIndex = 0;
 let currentImageIndex = 0;
@@ -56,4 +56,30 @@ setTimeout(function() {
 loaderContainer.style.display = 'none';
 
     document.getElementById('password-prompt').style.display = 'block';
-}, 5000);
+}, 2000);
+
+
+let img = ['😍', '❤️', '❣️', '🌻', '👩‍❤️‍💋‍👨', '👨‍💻', '👩‍⚕️'];
+
+document.addEventListener('mousemove', function(e) {
+    let body = document.querySelector('body');
+    let emoji = document.createElement('span');
+    let x = e.clientX; 
+    let y = e.clientY;
+
+    emoji.style.left = x + 'px';
+    emoji.style.top = y + 'px';
+
+    let icon = img[Math.floor(Math.random() * img.length)];
+    emoji.innerText = icon;
+
+    let size = Math.random() * 50;
+    emoji.style.fontSize = (5 + size) + 'px';
+
+    body.appendChild(emoji);
+
+    setTimeout(function() {
+        emoji.remove();
+    }, 2000);
+});
+

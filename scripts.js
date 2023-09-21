@@ -83,3 +83,21 @@ document.addEventListener('mousemove', function(e) {
     }, 2000);
 });
 
+window.onload = function() {
+    // Asegura que todas las imágenes estén cargadas
+    const image = document.getElementById("displayed-image");
+    if (image) {
+        image.onload = function() {
+            image.style.transform = "scale(1)"; // Tamaño original
+            image.style.opacity = "1"; // Completamente visible
+        }
+        // Si la imagen ya está en caché y no dispara el evento onload
+        if (image.complete) {
+            image.onload();
+        }
+    }
+
+    // ... el resto de tu código JS ...
+};
+
+
